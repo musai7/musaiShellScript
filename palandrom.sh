@@ -1,19 +1,23 @@
  #!/bin/bash -x
 result=0
 function palandrom() {
-	echo n=$1
-	while [ $n/10 -ne 0 ]
+	echo "$((n=$1))"
+	x=$n
+	while [ $(($n/10)) -ne 0 ]
 	do
-		temp=`expr $n%10`
-		result=`expr $result*10+$temp`
-		n=`expr $n/10'
+		temp=$(($n%10))
+		result=$(($result*10+$temp))
+		n=$(($n/10))
 	done
-	if [ $result -eq $n ]
+	if [ $result -eq $x ]
 	then
-		echo 
+		echo " entered number is palandrom : $x "
 	else
-		echo $0
+		echo " entered number is not a palandrom : $x "
 	fi
 }
-read -p " enter a number to check palandrom or not : " num
-pal="$(palandrom $num )"
+echo -n " enter a number to check palandrom or not : "
+read num1
+read num2
+pal="$(palandrom $num1 )"
+pal="$(palandrom $num2 )"
