@@ -17,9 +17,7 @@ do
 		min2=$min
 		min="${array[i+1]}"
 	else
-		max2=$max
-		max="${array[i+1]}"
-		min2=$min
-		min="${array[i]}"
+		max2="${array[i+1]}"
+		min2="${array[i]}"
 	fi
 done
